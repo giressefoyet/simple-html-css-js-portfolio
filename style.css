@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.school{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+  margin-block: 25px;
+  font-size: 50px;
+}
+
+#wrap {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: 999;
+    background:#524452;
+}
+/* Définissez la position à "absolute" pour que notre menus 
+déroulant ne tirent pas d'autres éléments vers le bas. */
+
+.navbar {
+    height: auto;
+    position: absolute;
+}
+
+/* Alignez les éléments de notre menu horizontalement en haut 
+de la page en définissant la propriété float à "left" */
+
+.navbar li {
+    height: auto;
+    width: 150px;
+    float: left;
+    list-style: none;
+    font: normal bold 12px/1em Arial, Verdana, Helvetica;
+    background-color: #444444;
+  }
+  /* Stylisez la reste des balises d'ancrage. */
+
+  .navbar a{
+    padding: 18px 0;
+    border-left: 1px solid #ccc9c9;
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+  }
+
+  /* Stylisez l'arrière-plan du menu pour qu'il change la couleur lorsqu'il est en survol. */
+
+.navbar li:hover{
+  background-color: #686464fb;
+}
+
+/* Ajoutez un style pour masquer le menu déroulant, et un autre style pour 
+l'afficher lorsqu'un pointeur de sourit est placé sur l'élément principal du menu. */
+
+.navbar li ul {
+    display: none;
+    height: auto;
+  }
+
+  .navbar li:hover ul {
+    display: block;
+  }
+
+  /* Changez les bordures, pour créer un effet du menu principal. */
+
+  .navbar li ul li a {
+    border-top: 1px solid #c9d4d8;
+    border-bottom: 1px solid #444444;
+  }
+.parent{
+  text-transform: uppercase;
+  background:#524452;
+}
+.parent:hover{
+    background-color: #746f6f;
+}
+
+/* css du slide  */
+
+.bloc,
+.bloc1{
+  width: 70%;
+  margin: 25px auto;
+  border: 2px solid rgb(255, 145, 0);
+  height: 250px;
+  overflow: hidden;
+}
+.bloc .slide{
+  display: flex;
+  width: 100%;
+  animation: slide-2-horizontal 12s infinite ease-in-out;
+}
+.bloc .slide p,
+.bloc1 .slide p{
+  color: white;
+  width: 100%;
+  min-height: 250px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  padding: 50px 0;
+  flex-shrink: 0; /* les paragraphes occuperons la taille total du bloc parent*/
+}
+
+@keyframes slide-2-horizontal{
+  0%, 20% {transform: translateX(0)}
+  25%, 45% {transform: translateX(-100%);}
+  50%, 70% {transform: translateX(-200%)}
+  75%, 95% {transform: translateX(-300%)}
+  100% {transform: translateX(-400%);}
+}
+
+/* css du slide vertical */
+
+.bloc1 .slide{
+  display: block;
+  width: 100%;
+  animation: slide-vetical 12s infinite ease-in-out;
+}
+@keyframes slide-vetical{
+  0%, 20% {transform: translateY(0)}
+  25%, 45% {transform: translateY(-350px);}
+  50%, 70% {transform: translateY(-700px)}
+  75%, 95% {transform: translateY(-1050px)}
+  100% {transform: translateY(-1400px);}
+}
+
+
+/* CSS du Responsive menu */
+
+.icon{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 7px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border:1px solid #0b77c0fa;
+  padding: 5px 10px;
+  background: #0b77c0fa;
+  transition: all 0.5s ease-out;
+  z-index: 999999;
+}
+.icon:hover{
+  background: #035992;
+  color:white ;
+}
+
+
+/*  CSS de notre footer */
+
+footer{
+  position: relative;
+  height: auto;
+  background: #333;
+  padding: 15px 100px;
+  color: white;
+  font-family: verdana;
+  
+}
+footer .foot{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+footer .ft{
+  width: 25%;
+  margin:25px 30px;
+}
+.ft h1{
+  font-family: verdana;
+  font-size: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  
+}
+.ft p{
+  text-align: justify;
+  line-height: 20px;
+  font-size:13px;
+}
+
+.ft .bt1{
+  padding: 25px 0px;
+}
+.ft .bt1 h3{
+  font: 25px;
+  margin-bottom: 15px;
+}
+.ft ul{
+  list-style: none;
+}
+.ft ul li{
+  margin-block: 10px;
+}
+
+.reseau a{
+  /* text-decoration: none; */
+  color: red;
+  transition: 0.3s ease-out;
+}
+.reseau a:hover{
+  color: rgb(233, 51, 51);
+}
+
+footer input{
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 13px;
+  border-radius: 40px;
+  outline: none;
+}
+#btn{
+  background: rgb(56, 56, 241);
+  color:white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1pxsolid white;
+}
+#btn:hover{
+  background: #035992;
+}
+
+.reserve{
+  margin-block: 25px;
+}
+.reserve p{
+  text-align: center;
+}
+hr{
+  margin: 20px auto;
+  width: 80%;
+}
+
+
+@media all and (max-width: 900px){
+  /* responsive menu*/
+
+  .icon{
+    display: block;
+  }
+  .wrap{
+    position: relative;
+  }
+  .navbar{
+    display: none;
+    width: 100%;
+  }
+  .navbar li {
+    display: block;
+    float: none;
+    width: 100%;
+    border-bottom: 1px solid #0b77c0fa;
+  }
+  .navbar.respons{
+    display: block;
+  }
+  h2{
+    margin-top: 300px;
+  }
+  .active{
+    text-decoration: underline;
+    text-transform: uppercase;
+    color:blue;
+  }
+  footer .foot{
+    flex-direction: column;
+  }
+  footer{
+    padding: 15px 10px;
+    text-align: center;
+  }
+  footer .ft{
+    width: 90%;
+    margin:10px auto;
+  }
+}
+
